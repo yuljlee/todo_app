@@ -14,8 +14,9 @@ class MyApp extends StatelessWidget {
     // helper.initializeDb().then(
     //   (result) => helper.getTodos().then((result) => todos = result));
     // DateTime today = DateTime.now();
-    // Todo todo = Todo('Buy some apples', today.toString(), 1, 'And make sure they are good');
+    // Todo todo = Todo('Buy some oranges', 1, today.toString(), 'And make sure they are good');
     // helper.insertTodo(todo);
+    //helper.deleteTod(1);  
 
     return MaterialApp(
       title: 'Todos',
@@ -36,18 +37,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  //int _counter = 0;
-
-  // void _incrementCounter() {
-  //   setState(() {
-  //     // This call to setState tells the Flutter framework that something has
-  //     // changed in this State, which causes it to rerun the build method below
-  //     // so that the display can reflect the updated values. If we changed
-  //     // _counter without calling setState(), then the build method would not be
-  //     // called again, and so nothing would appear to happen.
-  //     _counter++;
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {

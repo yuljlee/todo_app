@@ -76,7 +76,8 @@ class DbHelper {
   Future<int> deleteTod(int id) async {
     int result;
     var db = await this.db;
-    result = await db.rawDelete('DELETE FROM $tblTodo WHERE $colId = $id');
+    //result = await db.rawDelete('DELETE FROM $tblTodo WHERE $colId = $id');
+    
     return result;
   }
 
