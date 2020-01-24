@@ -7,7 +7,7 @@ class TodoDetail extends StatefulWidget {
   final Todo todo;
 
   @override
-  State<StatefulWidget> createState() => TodoDetailState();
+  State<StatefulWidget> createState() => TodoDetailState(todo);
 
 }
 
@@ -29,6 +29,42 @@ class TodoDetailState extends State {
         automaticallyImplyLeading: false,
         title: Text(todo.title),
         ),
+        body: Column(
+          children: <Widget>[
+            TextField(
+              controller: titleController,
+              style: textStyle,
+              decoration: InputDecoration(
+                labelText: 'Title',
+                labelStyle: textStyle,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                )
+              ),
+            ),
+            TextField(
+              controller: descriptionController,
+              style: textStyle,
+              decoration: InputDecoration(
+                labelText: 'Description',
+                labelStyle: textStyle,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                )
+              ),
+            ),
+            DropdownButton<String>(
+              items: _priorities.map((String value) {
+                return DropdownMenuItem<String> (
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              style: textStyle,
+              value: 'Low',
+              onChanged: null,
+            )
+          ],)
     );
     
   }
