@@ -5,10 +5,10 @@ import 'package:intl/intl.dart';
 
 class TodoDetail extends StatefulWidget {
   final Todo todo;
+  TodoDetail(this.todo);
 
   @override
   State<StatefulWidget> createState() => TodoDetailState(todo);
-
 }
 
 class TodoDetailState extends State {
@@ -29,8 +29,13 @@ class TodoDetailState extends State {
         automaticallyImplyLeading: false,
         title: Text(todo.title),
         ),
-        body: Column(
+        body: Padding(
+          padding: EdgeInsets.only(top: 35.0, left: 10.0, right: 10.0),
+          child: Column(
           children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(top:15.0, bottom: 10.0),
+              child:
             TextField(
               controller: titleController,
               style: textStyle,
@@ -41,6 +46,7 @@ class TodoDetailState extends State {
                   borderRadius: BorderRadius.circular(5.0),
                 )
               ),
+            )
             ),
             TextField(
               controller: descriptionController,
@@ -64,7 +70,9 @@ class TodoDetailState extends State {
               value: 'Low',
               onChanged: null,
             )
-          ],)
+          ],
+        ),
+      )
     );
     
   }
